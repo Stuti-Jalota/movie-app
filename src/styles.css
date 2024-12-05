@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+nav {
+    background:black;
+    padding: 1rem;
+    a {
+      color: white;
+      margin-right: 1rem;
+      text-decoration: none;
+    }
+  }
+  

@@ -1,0 +1,36 @@
+<h1>Movies</h1>
+
+<!-- Dropdown Menu -->
+<div class="dropdown">
+  <button class="dropdown-button">Movies</button>
+  <div class="dropdown-menu">
+    <a (click)="fetchMoviesByCategory('popular')">Popular</a>
+    <a (click)="fetchMoviesByCategory('now_playing')">Now Playing</a>
+    <a (click)="fetchMoviesByCategory('upcoming')">Upcoming</a>
+    <a (click)="fetchMoviesByCategory('top_rated')">Top Rated</a>
+  </div>
+</div>
+
+<!-- Movies Display -->
+<div class="movies-container">
+  <div *ngFor="let movie of movies" class="movie-card">
+    <img
+      [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+      [alt]="movie.title"
+    />
+    <h3>{{ movie.title }}</h3>
+    <button (click)="addToFavourites(movie)">Add to Favourites</button>
+  </div>
+</div>
+
+<!-- Favourites Section -->
+<h2>Favourites</h2>
+<div class="favourites-container">
+  <div *ngFor="let fav of favourites" class="movie-card">
+    <img
+      [src]="'https://image.tmdb.org/t/p/w500' + fav.poster_path"
+      [alt]="fav.title"
+    />
+    <h3>{{ fav.title }}</h3>
+  </div>
+</div>
